@@ -177,7 +177,6 @@ with graph.as_default():
 # Step 5: Begin training.
 num_steps = 100001
 
-init_op = tf.global_variables_initializer()
 
 with tf.Session(graph=graph) as session:
   # We must initialize all variables before we use them.
@@ -217,9 +216,9 @@ with tf.Session(graph=graph) as session:
   final_embeddings = normalized_embeddings.eval()
   #np.savetxt('final_embedding_dic.txt',reverse_dictionary,final_embeddings)
 
-  saver = tf.train.Saver()
-  save_path = saver.save(session, 'my-model')
-  print("Model saved in file: %s" % save_path)
+  #saver = tf.train.Saver()
+  #save_path = saver.save(session, 'my-model')
+  #print("Model saved in file: %s" % save_path)
   
 
   
